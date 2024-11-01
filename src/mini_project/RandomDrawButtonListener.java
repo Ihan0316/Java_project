@@ -64,7 +64,7 @@ public class RandomDrawButtonListener implements ActionListener {
 		Set<Integer> uniqueNumbers = new HashSet<>();
 
 		while (uniqueNumbers.size() < 5) {
-			int number = random.nextInt(30) + 1; // 1부터 30 사이의 숫자
+			int number = random.nextInt(20) + 1; // 1부터 20 사이의 숫자
 			uniqueNumbers.add(number); // 중복이 아니면 Set에 추가
 		}
 

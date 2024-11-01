@@ -89,8 +89,8 @@ public class DrawButtonListener implements ActionListener {
 		try {
 			for (int i = 0; i < numberStrings.length; i++) {
 				int number = Integer.parseInt(numberStrings[i].trim());
-				if (number < 1 || number > 30) {
-					showError("모든 숫자는 1에서 30 사이여야 합니다.");
+				if (number < 1 || number > 20) {
+					showError("모든 숫자는 1에서 20 사이여야 합니다.");
 					lotterySystem.getUserNumbersField().setText(""); // 입력란 비우기
 					return null; // 잘못된 입력 형식
 				}

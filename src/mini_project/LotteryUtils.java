@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class LotteryUtils {
     private static final int NUMBER_COUNT = 5;
-    private static final int MAX_NUMBER = 30;
+    private static final int MAX_NUMBER = 20;
 
     public static int[] generateWinningNumbers() {
         Random random = new Random();
@@ -14,7 +14,7 @@ public class LotteryUtils {
 
         // 중복되지 않는 번호 생성
         while (uniqueNumbers.size() < NUMBER_COUNT) {
-            int number = random.nextInt(MAX_NUMBER) + 1; // 1부터 30 사이의 랜덤 숫자
+            int number = random.nextInt(MAX_NUMBER) + 1; // 1부터 20 사이의 랜덤 숫자
             uniqueNumbers.add(number);
         }
 
