@@ -33,13 +33,13 @@ public class DrawButtonListener implements ActionListener {
 
 		int[] userNumbers = parseUserNumbers(userNumbersInput);
 		if (userNumbers == null)
-			return; // 오류 발생 시 메서드 종료
+			return;
 
 		int[] winningNumbers = LotteryUtils.generateWinningNumbers();
 		lotterySystem.getWinningNumbersLabel().setText("당첨 번호: " + Arrays.toString(winningNumbers));
 
 		int matchCount = countMatches(userNumbers, winningNumbers);
-		showResult(userId, userNumbers, matchCount, winningNumbers); // 당첨 번호 전달
+		showResult(userId, userNumbers, matchCount, winningNumbers);
 
 		saveResultToDatabase(userId, Arrays.toString(userNumbers), Arrays.toString(winningNumbers),
 				getResultString(matchCount));
@@ -53,7 +53,7 @@ public class DrawButtonListener implements ActionListener {
 	private void showResult(String userId, int[] userNumbers, int matchCount, int[] winningNumbers) {
 		StringBuilder result = new StringBuilder(
 				"사용자 ID: " + userId + "\n당신의 번호: " + Arrays.toString(userNumbers) + "\n");
-		result.append("당첨 번호: " + Arrays.toString(winningNumbers) + "\n"); // 당첨 번호 추가
+		result.append("당첨 번호: " + Arrays.toString(winningNumbers) + "\n");
 		result.append(matchCount == 5 ? "1등 당첨되었습니다!"
 				: matchCount == 4 ? "2등 당첨되었습니다!" : matchCount == 3 ? "3등 당첨되었습니다!" : "당첨되지 않았습니다.");
 		JOptionPane.showMessageDialog(lotterySystem, result.toString(), "추첨 결과", JOptionPane.INFORMATION_MESSAGE);
@@ -81,28 +81,27 @@ public class DrawButtonListener implements ActionListener {
 	private int[] parseUserNumbers(String userNumbersInput) {
 		String[] numberStrings = userNumbersInput.split(",");
 
-		if (numberStrings.length != 5) { // 숫자 개수가 5개인지 확인
+		if (numberStrings.length != 5) { 
 			showError("숫자는 5개를 입력해야 합니다.");
-			lotterySystem.getUserNumbersField().setText(""); // 입력란 비우기
-			return null; // 잘못된 입력 형식
+			lotterySystem.getUserNumbersField().setText("");
+			return null;
 		}
 
 		int[] numbers = new int[numberStrings.length];
-		Set<Integer> uniqueNumbers = new HashSet<>(); // 중복 확인을 위한 Set
+		Set<Integer> uniqueNumbers = new HashSet<>();
 
 		try {
 			for (int i = 0; i < numberStrings.length; i++) {
 				int number = Integer.parseInt(numberStrings[i].trim());
 				if (number < 1 || number > 20) {
 					showError("모든 숫자는 1에서 20 사이여야 합니다.");
-					lotterySystem.getUserNumbersField().setText(""); // 입력란 비우기
-					return null; // 잘못된 입력 형식
+					lotterySystem.getUserNumbersField().setText("");
+					return null;
 				}
 
-				// 중복된 숫자인지 확인
 				if (!uniqueNumbers.add(number)) {
 					showError("중복된 숫자가 입력되었습니다: " + number);
-					lotterySystem.getUserNumbersField().setText(""); // 입력란 비우기
+					lotterySystem.getUserNumbersField().setText("");
 					return null;
 				}
 
@@ -110,7 +109,7 @@ public class DrawButtonListener implements ActionListener {
 			}
 		} catch (NumberFormatException e) {
 			showError("번호 입력 형식이 잘못되었습니다. 예: 1,2,3,4,5");
-			lotterySystem.getUserNumbersField().setText(""); // 입력란 비우기
+			lotterySystem.getUserNumbersField().setText("");
 			return null;
 		}
 

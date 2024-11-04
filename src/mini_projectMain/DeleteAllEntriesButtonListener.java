@@ -1,11 +1,15 @@
 package mini_projectMain;
 
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
 
 import mini_projectDAO.LotteryDatabase;
 
-import java.awt.event.*;
-import java.sql.*;
 class DeleteAllEntriesButtonListener implements ActionListener {
 	private LotterySystem lotterySystem;
 
@@ -30,7 +34,7 @@ class DeleteAllEntriesButtonListener implements ActionListener {
 			if (rowsAffected > 0) {
 				JOptionPane.showMessageDialog(lotterySystem, "모든 레코드가 삭제되었습니다.", "삭제 완료",
 						JOptionPane.INFORMATION_MESSAGE);
-				lotterySystem.getListModel().clear(); // JList 모델 업데이트
+				lotterySystem.getListModel().clear();
 			} else {
 				JOptionPane.showMessageDialog(lotterySystem, "삭제할 레코드가 없습니다.", "삭제 실패", JOptionPane.WARNING_MESSAGE);
 			}

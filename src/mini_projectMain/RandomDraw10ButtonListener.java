@@ -18,23 +18,23 @@ import mini_projectDTO.LotteryUtils;
 public class RandomDraw10ButtonListener implements ActionListener {
 	private LotterySystem lotterySystem;
 	private Random random;
-	private Set<String> usedUserIds; // 사용된 ID를 저장할 Set
+	private Set<String> usedUserIds;
 
 	public RandomDraw10ButtonListener(LotterySystem lotterySystem) {
 		this.lotterySystem = lotterySystem;
 		this.random = new Random();
-		this.usedUserIds = new HashSet<>(); // HashSet 초기화
+		this.usedUserIds = new HashSet<>();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String userId = generateUniqueUserId(); // 유니크한 사용자 ID 생성
+		String userId = generateUniqueUserId();
 		int[][] randomDraws = LotteryUtils.generateMultipleDraws(10);
 		StringBuilder resultBuilder = new StringBuilder("랜덤 10번 추첨 결과:\n");
 
 		for (int i = 0; i < randomDraws.length; i++) {
 			int[] randomNumbers = randomDraws[i];
-			int[] winningNumbers = LotteryUtils.generateWinningNumbers(); // 고유 당첨 번호 생성
+			int[] winningNumbers = LotteryUtils.generateWinningNumbers();
 			int matchCount = LotteryUtils.countMatches(randomNumbers, winningNumbers);
 			String result = getResultString(matchCount);
 
@@ -51,10 +51,10 @@ public class RandomDraw10ButtonListener implements ActionListener {
 	private String generateUniqueUserId() {
 		String userId;
 		do {
-			userId = "user" + random.nextInt(10000); // 0~9999 사이의 숫자로 사용자 ID 생성
-		} while (usedUserIds.contains(userId)); // 이미 사용된 ID가 있는지 확인
-		usedUserIds.add(userId); // 새로 생성된 ID를 Set에 추가
-		return userId; // 고유한 사용자 ID 반환
+			userId = "user" + random.nextInt(10000);
+		} while (usedUserIds.contains(userId));
+		usedUserIds.add(userId);
+		return userId;
 	}
 
 	private void saveResultToDatabase(String userId, String userNumbers, String winningNumbers, String result) {
