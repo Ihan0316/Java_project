@@ -1,14 +1,8 @@
 package mini_project;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.awt.event.*;
+import java.sql.*;
+import java.util.*;
 import javax.swing.JOptionPane;
 
 public class RandomDraw10ButtonListener implements ActionListener {

@@ -1,11 +1,9 @@
 package mini_project;
 
 import javax.swing.*;
+
 import java.awt.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class LotterySystem extends JFrame {
     private JTextField userIdField;
@@ -54,7 +52,7 @@ public class LotterySystem extends JFrame {
         
         gbc.gridx = 0;
         gbc.gridy = 1;
-        add(new JLabel("번호 입력 (1~20중 5개 쉼표로 구분): "), gbc);
+        add(new JLabel("번호 입력 (1~10중 5개 쉼표로 구분): "), gbc);
 
         gbc.gridx = 1;
         add(userNumbersField, gbc);

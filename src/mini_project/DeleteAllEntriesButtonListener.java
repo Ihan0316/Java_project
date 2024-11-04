@@ -1,12 +1,9 @@
 package mini_project;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
+import java.awt.event.*;
+import java.sql.*;
 class DeleteAllEntriesButtonListener implements ActionListener {
 	private LotterySystem lotterySystem;
 
