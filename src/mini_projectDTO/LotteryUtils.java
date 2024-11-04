@@ -1,4 +1,4 @@
-package mini_project;
+package mini_projectDTO;
 
 import java.util.Random;
 import java.util.HashSet;

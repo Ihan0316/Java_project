@@ -1,6 +1,4 @@
-package mini_project;
-
-import javax.swing.*;
+package mini_projectMain;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,6 +8,11 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.swing.JOptionPane;
+
+import mini_projectDAO.LotteryDatabase;
+import mini_projectDTO.LotteryUtils;
 
 public class DrawButtonListener implements ActionListener {
 	private LotterySystem lotterySystem;

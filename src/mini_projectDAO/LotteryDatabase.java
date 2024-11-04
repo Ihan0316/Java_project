@@ -1,4 +1,4 @@
-package mini_project;
+package mini_projectDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

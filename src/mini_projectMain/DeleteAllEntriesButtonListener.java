@@ -1,6 +1,8 @@
-package mini_project;
+package mini_projectMain;
 
 import javax.swing.*;
+
+import mini_projectDAO.LotteryDatabase;
 
 import java.awt.event.*;
 import java.sql.*;

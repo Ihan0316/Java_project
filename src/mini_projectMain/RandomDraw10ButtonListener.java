@@ -1,9 +1,19 @@
-package mini_project;
+package mini_projectMain;
 
-import java.awt.event.*;
-import java.sql.*;
-import java.util.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 import javax.swing.JOptionPane;
+
+import mini_projectDAO.LotteryDatabase;
+import mini_projectDTO.LotteryUtils;
 
 public class RandomDraw10ButtonListener implements ActionListener {
 	private LotterySystem lotterySystem;
