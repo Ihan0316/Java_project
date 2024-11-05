@@ -27,7 +27,7 @@ public class LotteryUtils {
 		// 생성된 숫자를 정수 배열로 변환하기
 		int[] winningNumbers = uniqueNumbers.stream().mapToInt(Integer::intValue).toArray();
 		return winningNumbers;
-	} // generateWinningNumbers 함수
+	} // generateWinningNumbers 메서드
 
 	// 다중 추첨 생성하는 메서드
 	public static int[][] generateMultipleDraws(int drawCount) {
@@ -52,5 +52,5 @@ public class LotteryUtils {
 			} // 이중 for 문 2
 		} // 이중 for 문 1
 		return count;
-	} // countMatches 함수
+	} // countMatches 메서드
 } // LotteryUtils Class

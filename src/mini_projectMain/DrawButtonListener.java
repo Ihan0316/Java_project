@@ -58,12 +58,12 @@ public class DrawButtonListener implements ActionListener {
 		saveResultToDatabase(userId, Arrays.toString(userNumbers), Arrays.toString(winningNumbers),
 				getResultString(matchCount));
 		clearInputFields();
-	} // actionPerformed 함수
+	} // actionPerformed 메서드
 
 	// 오류 상황 발생시 "오류" 메시지 표시
 	private void showError(String message) {
 		JOptionPane.showMessageDialog(lotterySystem, message, "오류", JOptionPane.ERROR_MESSAGE);
-	} // showError 함수
+	} // showError 메서드
 
 	// showResult 메서드
 	// 사용자의 ID, 번호를 포함한 메시지를 구성
@@ -76,14 +76,14 @@ public class DrawButtonListener implements ActionListener {
 		result.append(matchCount == 5 ? "1등 당첨되었습니다!"
 				: matchCount == 4 ? "2등 당첨되었습니다!" : matchCount == 3 ? "3등 당첨되었습니다!" : "당첨되지 않았습니다.");
 		JOptionPane.showMessageDialog(lotterySystem, result.toString(), "추첨 결과", JOptionPane.INFORMATION_MESSAGE);
-	} // showResult 함수
+	} // showResult 메서드
 
 	// clearInputFields 메서드
 	// 사용자 입력 필드를 비우는 기능
 	private void clearInputFields() {
 		lotterySystem.getUserIdField().setText("");
 		lotterySystem.getUserNumbersField().setText("");
-	} // clearInputFields 함수
+	} // clearInputFields 메서드
 
 	// DB에 연결 후 lottery_entries 테이블에 결과를 저장하기 위한 SQL 구문
 	private void saveResultToDatabase(String userId, String userNumbers, String winningNumbers, String result) {
@@ -101,7 +101,7 @@ public class DrawButtonListener implements ActionListener {
 		catch (SQLException ex) {
 			showError("데이터베이스에 저장하는 중 오류 발생");
 		} // catch 문
-	} // saveResultToDatabase 함수
+	} // saveResultToDatabase 메서드
 
 	// parseUserNumbers 메서드
 	private int[] parseUserNumbers(String userNumbersInput) {
@@ -150,7 +150,7 @@ public class DrawButtonListener implements ActionListener {
 
 		// 모든 숫자가 올바르게 입력시 배열 반환
 		return numbers;
-	} // parseUserNumbers 함수
+	} // parseUserNumbers 메서드
 
 	// countMatches 메서드
 	// 일치하는 번호 수 세서 반환
@@ -163,7 +163,7 @@ public class DrawButtonListener implements ActionListener {
 			} // for 1 - if 문
 		} // for 2
 		return count;
-	} // countMatches 함수
+	} // countMatches 메서드
 
 	// getResultString 메서드
 	// 당첨 결과를 matchCount를 통해 비교 후, 문자열 반환
@@ -178,5 +178,5 @@ public class DrawButtonListener implements ActionListener {
 		default:
 			return "미당첨";
 		} // switch 문
-	} // getResultString 함수
+	} // getResultString 메서드
 } // DrawButtonListener Class

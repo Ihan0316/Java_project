@@ -29,13 +29,13 @@ class DeleteAllEntriesButtonListener implements ActionListener {
 		int confirm = JOptionPane.showConfirmDialog(lotterySystem, "전체 테이블을 삭제하시겠습니까?", "확인",
 				JOptionPane.YES_NO_OPTION);
 
-		// 예를 누를시 전체 데이터 삭제 함수 호출
+		// 예를 누를시 전체 데이터 삭제 메서드 호출
 		if (confirm == JOptionPane.YES_OPTION) {
 			deleteAllEntriesFromDatabase();
 		} // JOptionPane.YES_OPTION 이 "예" 일 경우 deleteAllEntriesFromDatabase 함수 호출
 	} // 버튼 클릭 메서드
 
-	// DB에서 모든 레코드를 삭제하는 함수
+	// DB에서 모든 레코드를 삭제하는 메서드
 	private void deleteAllEntriesFromDatabase() {
 
 		// LotteryDatabase.getConnection 을 통해 DB연결을 생성
@@ -61,5 +61,5 @@ class DeleteAllEntriesButtonListener implements ActionListener {
 			JOptionPane.showMessageDialog(lotterySystem, "데이터베이스에서 레코드를 삭제하는 중 오류 발생", "DB 오류",
 					JOptionPane.ERROR_MESSAGE);
 		} // catch 문
-	} // deleteAllEntriesFromDatabase 함수
+	} // deleteAllEntriesFromDatabase 메서드
 } // DeleteAllEntriesButtonListener Class

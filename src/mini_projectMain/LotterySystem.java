@@ -141,7 +141,7 @@ public class LotterySystem extends JFrame {
 		deleteAllButton.setPreferredSize(buttonSize);
 		deleteAllButton.addActionListener(new DeleteAllEntriesButtonListener(this));
 		add(deleteAllButton, gbc);
-	} // initializeUIComponents 함수
+	} // initializeUIComponents 메서드
 
 	// filterResults 메서드
 	// 결과 출력을 위한 필터링 시스템
@@ -169,7 +169,7 @@ public class LotterySystem extends JFrame {
 			e.printStackTrace();
 			JOptionPane.showMessageDialog(this, "데이터베이스 오류: " + e.getMessage(), "오류", JOptionPane.ERROR_MESSAGE);
 		} // catch 문
-	} // filterResults 함수
+	} // filterResults 메서드
 
 	// getter 메서드..
 	public JTextField getUserIdField() {
@@ -195,5 +195,5 @@ public class LotterySystem extends JFrame {
 			LotterySystem lotterySystem = new LotterySystem();
 			lotterySystem.setVisible(true);
 		}); // SwingUtilities.invokeLater 문
-	} // main 함수
+	} // main 메서드
 } // LotterySystem Class

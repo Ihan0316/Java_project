@@ -55,7 +55,7 @@ public class RandomDraw10ButtonListener implements ActionListener {
 		// 결과 메시지를 JOptionPane.showMessageDialog 를 이용하여 표시
 		JOptionPane.showMessageDialog(lotterySystem, resultBuilder.toString(), "랜덤 10번 추첨 결과",
 				JOptionPane.INFORMATION_MESSAGE);
-	} // actionPerformed 함수
+	} // actionPerformed 메서드
 
 	// generateUniqueUserId 메서드
 	// 랜덤으로 사용된 ID가 사용되었는지 확인 후, 중복되지 않는 ID 생성
@@ -67,7 +67,7 @@ public class RandomDraw10ButtonListener implements ActionListener {
 		while (usedUserIds.contains(userId));
 		usedUserIds.add(userId);
 		return userId;
-	} // generateUniqueUserId 함수
+	} // generateUniqueUserId 메서드
 
 	// saveResultToDatabase 메서드
 	// 주어진 결과를 DB에 저장하는 기능
@@ -88,7 +88,7 @@ public class RandomDraw10ButtonListener implements ActionListener {
 		catch (SQLException ex) {
 			JOptionPane.showMessageDialog(lotterySystem, "데이터베이스에 저장하는 중 오류 발생", "DB 오류", JOptionPane.ERROR_MESSAGE);
 		} // catch 문
-	} // saveResultToDatabase 함수
+	} // saveResultToDatabase 메서드
 
 	// getResultString 메서드
 	// 일치하는 숫자 개수에 따라 case 문을 사용하여 결과값 반환
@@ -103,5 +103,5 @@ public class RandomDraw10ButtonListener implements ActionListener {
 		default:
 			return "미당첨";
 		} // switch 문
-	} // getResultString 함수
+	} // getResultString 메서드
 } // RandomDraw10ButtonListener Class
