@@ -49,8 +49,8 @@ public class LotteryUtils {
 			for (int winNum : winningNumbers) {
 				if (userNum == winNum)
 					count++;
-			} // 이중 for 문 2
-		} // 이중 for 문 1
+			} // for-each 문 2
+		} // for-each 문 1
 		return count;
 	} // countMatches 메서드
 } // LotteryUtils Class

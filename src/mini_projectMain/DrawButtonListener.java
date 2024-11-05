@@ -160,8 +160,8 @@ public class DrawButtonListener implements ActionListener {
 			for (int winNum : winningNumbers) {
 				if (num == winNum)
 					count++;
-			} // for 1 - if 문
-		} // for 2
+			} // for - each - if 문 1
+		} // for - each 문 2
 		return count;
 	} // countMatches 메서드
 
